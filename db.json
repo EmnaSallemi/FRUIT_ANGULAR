@@ -18,7 +18,12 @@
     "Name": "Mango",
     "Quantity": 10,
     "Price" : 350
-  }],
+  },
+  {"id": 2,
+  "Name": "Apple",
+  "Quantity": 5,
+  "Price" : 210
+}],
   "profile": {
     "name": "typicode"
   }
