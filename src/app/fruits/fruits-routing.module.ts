@@ -6,7 +6,9 @@ const routes: Routes = [
   {
     path: 'fruits/home',
     component: HomeComponent,
-  
+    ///path: 'fruits/create',
+    //component: CreateComponent,
+
   },
 ];
 
