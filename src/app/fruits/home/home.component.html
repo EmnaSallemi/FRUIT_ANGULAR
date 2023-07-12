@@ -11,14 +11,18 @@
           <th scope="col">Name</th>
           <th scope="col">Quantity</th>
           <th scope="col">Price</th>
+          <th scope="col">Acion</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of allFruits">
           <th scope="row">{{ item.id }}</th>
-          <td scope="row">{{ item.name }}</td>
+          <td >{{ item.name }}</td>
           <td>{{ item.quantity }}</td>
           <td>{{ item.price }}</td>
+          <td>
+            <a class="btn btn-primary" [routerLink]="['/fruits/edit', item.id]">Edit</a>
+          </td>
         </tr>
       </tbody>
     </table>
