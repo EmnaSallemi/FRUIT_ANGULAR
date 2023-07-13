@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Fruits } from '../fruits';
 import { FruitsService } from '../fruits.service';
  
+declare var window: any;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,11 +11,15 @@ import { FruitsService } from '../fruits.service';
 })
 export class HomeComponent implements OnInit {
   allFruits: Fruits[] = [];
- 
+  deleteModal: any; //'deleteModal' to store the instance of the botstrap modal.??
+  idTodelete: number = 0;
+
   constructor(private fruitService: FruitsService) {}
  
   ngOnInit(): void {
     this.get();
+    this.deleteModal = new window.bootstrap.Modal(
+    document.getElementById('deleteModal'));
   }
  
   get() {
@@ -21,4 +27,19 @@ export class HomeComponent implements OnInit {
       this.allFruits = data;
     });
   }
+
+  openDeleteModal(id: number) {
+    this.idTodelete = id;
+    this.deleteModal.show();
+  }
+  
+  delete() {
+    this.fruitService.delete(this.idTodelete).subscribe({
+      next: (data) => {
+        this.allFruits = this.allFruits.filter(_ => _.id != this.idTodelete)
+        this.deleteModal.hide();
+      },
+    });
+  }
+
 }

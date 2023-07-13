@@ -17,16 +17,20 @@
     {
       "id": 1,
       "Name": "Mango",
-      "Quantity": 10,
+      " Quality": 10,
       "Price": 350,
-      "price": 1,
-      "quantity": 3
+      "name": "hhhhh",
+      "price": 5,
+      "quantity": 40
     },
     {
       "id": 2,
-      "Name": "Apple",
-      "Quantity": 5,
-      "Price": 210
+      "Name": "Appleo",
+      " Quality": 5,
+      "Price": 210,
+      "name": "aaaaa",
+      "price": 5,
+      "quantity": 55
     }
   ],
   "profile": {
